@@ -129,16 +129,16 @@
 	/**
 	 * @var mixed $output It must be configured like single output of the controller
 	 */
-	if ( ! isset($output)):
-		?>
-		<div class="caution">
-			The <strong>$output</strong> is no results.
-		</div><?php
-	else:
-		?>
-		<pre><?php print_r($output); ?></pre>
-		<?php
-	endif;
+	if ( ! isset($output))
+	{
+		echo '<div class="caution">The <strong>$output</strong> have not results.</div>';
+	}
+	else
+	{
+		echo '<pre>';
+		print_r($output);
+		echo '</pre>';
+	}
 	?>
 </div>
 <footer>
