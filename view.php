@@ -1,3 +1,11 @@
+<?php
+/**
+ * PHP Developer Tests View
+ *
+ * @author        Natan Felles
+ * @link          http://github.com/natanfelles/php-view
+ */
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -140,6 +148,7 @@
 		echo '</pre>';
 	}
 	?>
+
 </div>
 <footer>
 	<div class="container">
