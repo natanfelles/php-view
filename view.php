@@ -80,7 +80,7 @@
 			min-width: 800px;
 		}
 
-		pre {
+		.caution, pre {
 			box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset;
 			border-radius: 0 0 2px 2px;
 			padding: 10px;
@@ -90,6 +90,13 @@
 			width: 100%;
 			min-height: 200px;
 			overflow-x: auto;
+		}
+
+		.caution {
+			padding: 30px 10px;
+			background-color: #F4DFDF;
+			border-color: #EABFBF;
+			min-height: 20px;
 		}
 
 		footer {
@@ -118,13 +125,21 @@
 </header>
 <div class="container">
 	<h1>Output</h1>
-	<pre><?php
-		/**
-		 * @var mixed $output It must be configured like single output of the controller
-		 */
-		print_r($output);
+	<?php
+	/**
+	 * @var mixed $output It must be configured like single output of the controller
+	 */
+	if ( ! isset($output)):
 		?>
-	</pre>
+		<div class="caution">
+			The <strong>$output</strong> is no results.
+		</div><?php
+	else:
+		?>
+		<pre><?php print_r($output); ?></pre>
+		<?php
+	endif;
+	?>
 </div>
 <footer>
 	<div class="container">
